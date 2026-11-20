@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#121822">
+  <title>PhysScope: Agentic Multimodal Physics Reasoning with Grounded Visual Memory</title>
+  <meta name="description" content="PhysScope keeps track of when a physical premise applies. Explore the interactive pulley example, the visual harness, and results across six vision-language models.">
+  <meta name="citation_title" content="PhysScope: Agentic Multimodal Physics Reasoning with Grounded Visual Memory">
+  <meta name="citation_author" content="Haoyang Liu">
+  <meta name="citation_author" content="Kecheng Liang">
+  <meta name="citation_author" content="Xinyu Li">
+  <meta name="citation_author" content="Weixing Chen">
+  <meta name="citation_author" content="Yang Liu">
+  <meta name="citation_publication_date" content="2026/11/17">
+  <meta name="citation_arxiv_id" content="2611.23010">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2611.23010">
+  <meta property="og:title" content="PhysScope: Agentic Multimodal Physics Reasoning with Grounded Visual Memory">
+  <meta property="og:description" content="An interactive guide to scope-aware visual memory for physics reasoning.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shenxianasi.github.io/PhysScope/">
+  <meta property="og:image" content="https://shenxianasi.github.io/PhysScope/assets/figures/overview.webp">
+  <link rel="canonical" href="https://shenxianasi.github.io/PhysScope/">
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to article</a>
+  <svg class="symbol-bank" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <symbol id="icon-paper" viewBox="0 0 24 24"><path d="M5 2.5h9l5 5V21H5z M14 2.5V8h5 M8.5 12h7 M8.5 16h7"/></symbol>
+      <symbol id="icon-code" viewBox="0 0 24 24"><path d="m7 7-5 5 5 5m10-10 5 5-5 5m-4-14-3 18"/></symbol>
+      <symbol id="icon-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V3H3v13h5"/></symbol>
+      <symbol id="icon-scope" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/><circle cx="12" cy="12" r="4"/></symbol>
+    </defs>
+  </svg>
+  <div class="page" id="top">
+    <header class="masthead">
+      <a class="brand" href="#top"><img src="assets/mark.svg" width="30" height="30" alt="">PhysScope</a>
+      <nav aria-label="Main navigation"><a href="#method">Method</a><a href="#results">Results</a><a href="#citation">Citation</a></nav>
+      <time datetime="2026-11-19">19 Nov 2026</time>
+    </header>
+    <main id="main">
+      <section class="hero" aria-labelledby="paper-title">
+        <div class="identity">
+          <div class="paper-id"><span class="rule"></span><a href="https://arxiv.org/abs/2611.23010v2">arXiv:2611.23010v2</a><span class="subject">cs.AI</span></div>
+          <h1 id="paper-title"><span class="project-name">PhysScope<span class="sr-only">: </span></span><span class="full-title">Agentic Multimodal Physics Reasoning with Grounded Visual Memory</span></h1>
+          <div class="byline"><a href="https://github.com/shenxianasi">Haoyang Liu<sup>1</sup></a><span>Kecheng Liang<sup>2</sup></span><span>Xinyu Li<sup>2</sup></span><span>Weixing Chen<sup>2</sup></span><span>Yang Liu<sup>2,†</sup></span></div>
+          <div class="affiliations"><span><sup>1</sup> Dalian University of Technology</span><span><sup>2</sup> Sun Yat-sen University</span><a href="mailto:liuy856@mail.sysu.edu.cn"><sup>†</sup> Corresponding author</a></div>
+          <div class="resources"><a class="button primary" href="https://arxiv.org/pdf/2611.23010"><svg aria-hidden="true"><use href="#icon-paper"/></svg>Read paper</a><a class="button" href="https://github.com/HCPLab-SYSU/PhysScope"><svg aria-hidden="true"><use href="#icon-code"/></svg>GitHub code</a></div>
+        </div>
+        <figure class="inspector" data-state="B" aria-labelledby="demo-title">
+          <div class="instrument-top"><span class="instrument-name" id="demo-title"><svg aria-hidden="true"><use href="#icon-scope"/></svg>Scope inspector</span><span class="instrument-type">Mechanics</span></div>
+          <div class="plot">
+            <div class="readout" aria-hidden="true"><span>Rope angle</span><b class="only-a">30°</b><b class="only-b">53°</b></div>
+            <svg viewBox="0 0 490 258" class="schematic" role="img" aria-labelledby="plot-title plot-description">
+              <title id="plot-title">Two masses connected by a rope over a fixed pulley</title>
+              <desc id="plot-description">In state B, block P is closer to the pulley and its rope makes a 53-degree angle with the horizontal. The dashed rope shows the other state.</desc>
+              <defs>
+                <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse"><path d="M-1 7 7 -1 M6 8 8 6" stroke="#70819b" stroke-width="1"/></pattern>
+                <linearGradient id="block-fill" x2="0" y2="1"><stop stop-color="#f5cf7d"/><stop offset="1" stop-color="#dda955"/></linearGradient>
+              </defs>
+              <g class="structure"><path d="M14 213 219 95 M17 215 220 98 M16 214h171" /><path d="M18 215h169v6H18z M194 31h44v7h-44z" fill="url(#hatch)" stroke="none"/><path d="M194 38h44 M216 38v30 M222 188h237 M222 192h237"/></g>
+              <g class="faint-lines"><path d="M216 92v95m0 10v18 M15 227v7h9 M469 227v7h-9"/><path d="M20 47v-7h9" /></g>
+              <g transform="translate(14 200) rotate(-30)">
+                <g class="only-a"><path class="rope" d="M158 -11H234"/><path class="spring" d="M1 -11h10l6 -6 8 12 8 -12 8 12 8 -12 8 12 8 -12 8 12 8 -12 8 12 8 -12 8 12 8 -12 8 12 8 -12 7 6h9"/></g>
+                <g class="only-b"><path class="rope" d="M69 -11h165"/><path class="spring" d="M1 -11h4l3 -5 4 10 4 -10 4 10 4 -10 4 10 4 -10 4 10 4 -10 4 10 4 -10 3 5h5"/></g>
+                <path d="M1 -21v26" class="structure"/>
+                <g class="only-a" transform="translate(158 -8)"><rect class="block-q" x="-17" y="-14" width="34" height="28" rx="2"/><text class="block-letter" y="5">Q</text></g>
+                <g class="only-b" transform="translate(69 -8)"><rect class="block-q" x="-17" y="-14" width="34" height="28" rx="2"/><text class="block-letter" y="5">Q</text></g>
+              </g>
+              <g class="only-b">
+                <path class="ghost" d="m218 70 202 118"/><rect class="ghost ghost-block" x="405" y="175" width="32" height="26" rx="2"/>
+                <path class="rope" d="M220 75 305 188"/><path class="angle" d="M269 188h36l-22 -29a36 36 0 0 0-14 29z"/>
+                <text class="angle-label" x="257" y="171">53°</text>
+                <g transform="translate(305 188)"><rect class="block-p" x="-15" y="-14" width="32" height="28" rx="2"/><text class="block-letter" y="5">P</text></g>
+              </g>
+              <g class="only-a">
+                <path class="ghost" d="m218 70 87 118"/><rect class="ghost ghost-block" x="290" y="175" width="32" height="26" rx="2"/>
+                <path class="rope" d="M219 71 421 188"/><path class="angle" d="M376 188h45l-39 -22a45 45 0 0 0-6 22z"/>
+                <text class="angle-label" x="367" y="178">30°</text>
+                <g transform="translate(421 188)"><rect class="block-p" x="-15" y="-14" width="32" height="28" rx="2"/><text class="block-letter" y="5">P</text></g>
+              </g>
+              <g class="wheel"><circle cx="216" cy="70" r="12.5"/><circle cx="216" cy="70" r="7.3"/><circle cx="216" cy="70" r="2.5"/></g>
+              <text class="part-label" x="235" y="63">O</text>
+              <text class="position state-b-label" x="305" y="222">B</text><text class="position state-a-label" x="421" y="222">A</text>
+            </svg>
+          </div>
+          <div class="instrument-bottom">
+            <div class="equation"><span>Velocity constraint</span><strong aria-live="polite" id="equation">v<sub>Q</sub> = v<sub>P</sub> cos 53°</strong></div>
+            <div class="toggle" role="group" aria-label="Select physical state"><button type="button" data-state-choice="A" aria-pressed="false">State A</button><button type="button" data-state-choice="B" aria-pressed="true">State B</button></div>
+          </div>
+          <figcaption>Switch states to see which rope angle applies.</figcaption>
+        </figure>
+      </section>
+      <div class="metrics" aria-label="Research highlights">
+        <div><strong>6<span>/6</span></strong><p>Backbones with higher solving scores on PhysAlign</p></div>
+        <div><strong>+9.34<span> pp</span></strong><p>Over Canvas-CoT with Gemini on PhysAlign</p></div>
+        <div><strong>+150</strong><p>Additional correct answers on PhysUniBench with Gemini</p></div>
+      </div>
+      <div class="article-layout">
+        <aside class="rail"><nav aria-label="Article contents"><p>On this page</p><a href="#motivation">Motivation</a><a href="#method">Method</a><a href="#cases">Case studies</a><a href="#results">Results</a><a href="#citation">Citation</a></nav></aside>
+        <article>
+          <section id="motivation">
+            <h2>When does a premise apply?</h2>
+            <p class="lead">A model can read both angles in a physics diagram correctly and still substitute the wrong one into an equation.</p>
+            <p>In the pulley problem above, block P starts at A. When it reaches B, the rope makes a steeper angle with the rod. Reusing the initial 30° angle gives the wrong speed for Q, even if every subsequent algebraic step is correct.</p>
+            <p>PhysScope records which objects, states, and conditions a premise refers to. The 30° reading remains available for questions about A. A calculation at B uses the 53° reading associated with B.</p>
+            <details class="source-details"><summary>View the source diagram and its state annotation</summary><div class="source-pair"><figure><img src="assets/figures/source-apparatus.webp" alt="The original problem drawing of a pulley, spring, inclined plane, and blocks P and Q." loading="lazy" width="1120" height="372"><figcaption>Source diagram</figcaption></figure><figure><img src="assets/figures/apparatus.webp" alt="The paper’s annotation at B, showing the velocity directions, a 53-degree active angle and the earlier 30-degree angle." loading="lazy" width="1196" height="720"><figcaption>Annotated state B</figcaption></figure></div></details>
+          </section>
+          <section id="method">
+            <h2>How PhysScope works</h2>
+            <p class="lead">PhysScope gives a vision-language model a working memory it can inspect and revise at inference time. The model weights stay fixed.</p>
+            <figure class="paper-figure"><a href="assets/figures/overview.webp" aria-label="Open full-resolution PhysScope method figure"><img src="assets/figures/overview.webp" width="2400" height="1350" loading="lazy" alt="The PhysScope framework connects a two-call reasoning process to scoped premises, derived views, and a source-checked revision loop."></a><figcaption>The harness connects the original diagram, versioned premises, derived views, and the model calls that receive them. <a href="https://arxiv.org/pdf/2611.23010v2#page=4">Paper, Fig. 2</a></figcaption></figure>
+            <dl class="steps">
+              <div><dt>Record the scope</dt><dd>On the first call, the model reads the problem and proposes physical facts. The harness records each premise with its source, state, and conditions of use.</dd></div>
+              <div><dt>Show the relevant state</dt><dd>For the second call, the harness delivers the evidence, checks, and supported diagrams drawn from those same records. Unresolved quantities remain visible as unknowns.</dd></div>
+              <div><dt>Recheck what depends on a revision</dt><dd>Correcting a source reading requires a fresh inspection. If the correction is accepted, the harness marks dependent equations and views as stale. An eligible issue can trigger one follow-up call.</dd></div>
+            </dl>
+          </section>
+          <section id="cases">
+            <h2>Two ways to lose the scope</h2>
+            <figure class="paper-figure"><a href="assets/figures/trajectories.webp" aria-label="Open full-resolution reasoning trajectories"><img src="assets/figures/trajectories.webp" width="2400" height="1350" loading="lazy" alt="Recorded PhysScope and Canvas-CoT trajectories for a sphere hitting a step and a gas following a two-leg thermodynamic process."></a><figcaption>Recorded reasoning trajectories from PhysAlign and PhysUniBench, with explanatory redraws of intermediate diagrams. <a href="https://arxiv.org/pdf/2611.23010v2#page=5">Paper, Fig. 3</a></figcaption></figure>
+            <div class="case-notes"><div><h3>A change of pivot</h3><p>A rolling sphere hits a step. The pre-impact rolling relation applies on the floor. To work out whether the sphere climbs, the solver needs its angular velocity just after impact about the corner.</p></div><div><h3>A change of endpoints</h3><p>A gas expands from A to B and follows an adiabatic path from B to C. A and C have equal temperatures. Their internal-energy difference is zero even though the energy changes along the first leg.</p></div></div>
+          </section>
+          <section id="results">
+            <h2>Experimental results</h2>
+            <p class="lead">All six backbones earn more solving credit with PhysScope on the 986-problem PhysAlign evaluation. The size of the gain varies by model.</p>
+            <div class="result-block"><div class="result-heading"><h3>PhysAlign</h3><span>SolveAcc (%)</span></div>
+              <table><caption class="sr-only">Direct solving and PhysScope on PhysAlign, with percentage-point gains. Paper Table 1.</caption><thead><tr><th scope="col">Backbone</th><th scope="col">Direct</th><th scope="col">PhysScope</th><th scope="col">Gain (pp)</th></tr></thead><tbody>
+                <tr><th scope="row">Gemini-3.8-flash</th><td>21.31</td><td>30.70</td><td>+9.39</td></tr>
+                <tr><th scope="row">GPT-5.6-sol</th><td>71.08</td><td>88.03</td><td>+16.95</td></tr>
+                <tr><th scope="row">DeepSeek-V4.1-Flash-1017</th><td>69.85</td><td>90.94</td><td>+21.09</td></tr>
+                <tr><th scope="row">Qwen3.5-9B</th><td>12.12</td><td>23.39</td><td>+11.27</td></tr>
+                <tr><th scope="row">Qwen3.5-27B</th><td>18.39</td><td>24.54</td><td>+6.15</td></tr>
+                <tr><th scope="row">InternVL3.5-14B</th><td>12.71</td><td>14.54</td><td>+1.83</td></tr>
+              </tbody></table></div>
+            <p class="figure-note">SolveAcc averages normalized problem credit, including partial credit on open-ended problems. With Gemini-3.8-flash, Canvas-CoT scores 21.36%, compared with 30.70% for PhysScope. <a href="https://arxiv.org/pdf/2611.23010v2#page=7">Tables 1–2</a></p>
+            <h3>Transfer to PhysUniBench</h3><p>On 1,024 external problems, Gemini-3.8-flash answers 384 correctly with direct solving and 534 with PhysScope. This evaluation scores the final answer as correct or incorrect.</p>
+            <div class="bars" aria-label="Final-answer accuracy on PhysUniBench"><div><span>Direct solving</span><i style="--score:37.50%" aria-hidden="true"></i><b>37.50%</b></div><div><span>PhysScope</span><i style="--score:52.15%" aria-hidden="true"></i><b>52.15%</b></div></div>
+            <h3>What changes when scope is removed?</h3><p>On a fixed subset of 512 PhysAlign problems, removing scope management leaves content recognition at 93.75%, while SolveAcc falls from 41.15% to 24.31%. Separately, removing dependency invalidation lowers SolveAcc to 35.71%. <a href="https://arxiv.org/pdf/2611.23010v2#page=9">Table 4</a></p>
+          </section>
+          <section id="citation"><h2>Cite PhysScope</h2>
+            <div class="bib-panel"><div class="bib-head"><span>BibTeX</span><button id="copy-citation" type="button" hidden><svg aria-hidden="true"><use href="#icon-copy"/></svg>Copy</button></div>
+              <pre><code id="bibtex">@misc{liu2026physscope,
+  title = {{PhysScope}: Agentic Multimodal Physics Reasoning with Grounded Visual Memory},
+  author = {Haoyang Liu and Kecheng Liang and Xinyu Li and Weixing Chen and Yang Liu},
+  year = {2026},
+  eprint = {2611.23010},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  doi = {10.48550/arXiv.2611.23010},
+  url = {https://arxiv.org/abs/2611.23010}
+}</code></pre></div>
+            <p class="citation-links"><a href="citation.bib" download>Download .bib</a><a href="https://arxiv.org/abs/2611.23010">arXiv record</a></p><span class="sr-only" id="copy-status" role="status"></span>
+          </section>
+        </article>
+      </div>
+    </main>
+    <footer><a class="footer-brand" href="#top"><img src="assets/mark.svg" width="22" height="22" alt="">PhysScope</a><span>Project page design inspired by <a href="https://vista-research.github.io/">VISTA</a>.</span><a href="#top">Back to top</a></footer>
+  </div>
+</body></html>
